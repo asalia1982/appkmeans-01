@@ -8,11 +8,13 @@ import google.generativeai as genai
 
 
 st.set_page_config(
+    page_title="PCAF-03 PROGRAMACIÓN APLICADA A LAS CIENCIAS ACTUARIALES",
     page_title="Riesgo Actuarial con K-means",
     layout="centered"
 )
 
 st.title("Clasificación de riesgo actuarial con K-means")
+st.title("Elaborado por: escribir su nombre")
 st.write("Ingrese los datos del cliente para estimar su nivel de riesgo y generar recomendaciones actuariales.")
 
 MODEL_PATH = Path("models/kmeans_riesgo_actuarial.pkl")
