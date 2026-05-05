@@ -52,7 +52,7 @@ def generar_recomendacion_ia(cliente_df, riesgo, cluster):
 
     try:
         genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-        modelo_ia = genai.GenerativeModel("gemini-1.5-flash")
+        modelo_ia = genai.GenerativeModel("gemini-2.5-flash")
 
         cliente = cliente_df.iloc[0].to_dict()
 
