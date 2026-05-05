@@ -1,0 +1,28 @@
+{
+  "nombre_modelo": "K-means para segmentación de riesgo actuarial",
+  "tipo_modelo": "Clustering no supervisado",
+  "n_clusters": 3,
+  "numeric_features": [
+    "age",
+    "bmi",
+    "children",
+    "charges"
+  ],
+  "categorical_features": [
+    "sex",
+    "smoker",
+    "region"
+  ],
+  "silhouette_score": 0.178,
+  "mapa_riesgo": {
+    "1": "Bajo",
+    "2": "Medio",
+    "0": "Alto"
+  },
+  "descripcion_riesgo": {
+    "Bajo": "Grupo con menor costo médico promedio.",
+    "Medio": "Grupo con costo médico promedio intermedio.",
+    "Alto": "Grupo con mayor costo médico promedio."
+  },
+  "nota_metodologica": "K-means agrupa perfiles similares. La etiqueta de riesgo se asigna interpretando el promedio de cargos médicos por cluster."
+}
