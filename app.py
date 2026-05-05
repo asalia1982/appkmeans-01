@@ -9,7 +9,6 @@ import google.generativeai as genai
 
 st.set_page_config(
     page_title="PCAF-03 PROGRAMACIÓN APLICADA A LAS CIENCIAS ACTUARIALES",
-    page_title="Riesgo Actuarial con K-means",
     layout="centered"
 )
 
