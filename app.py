@@ -69,7 +69,26 @@ cliente = pd.DataFrame([{
 }])
 
 if st.button("Evaluar riesgo"):
+    # Predicción compatible con dos tipos de modelos:
+# 1. Pipeline completo con .predict()
+# 2. Diccionario con model + scaler
+
+if hasattr(modelo, "predict"):
     cluster = int(modelo.predict(cliente)[0])
+
+elif isinstance(modelo, dict):
+    columnas = ["age", "bmi", "children", "charges"]
+    X_num = cliente[columnas]
+
+    scaler = modelo["scaler"]
+    kmeans = modelo["model"]
+
+    X_scaled = scaler.transform(X_num)
+    cluster = int(kmeans.predict(X_scaled)[0])
+
+else:
+    st.error("El archivo del modelo no tiene un formato compatible.")
+    st.stop()
 
     mapa_riesgo = metadata["mapa_riesgo"]
     riesgo = mapa_riesgo[str(cluster)]
